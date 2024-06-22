@@ -1,0 +1,21 @@
+body {
+  display: flex;
+}
+
+aside {
+  flex-basis: 200px;
+  padding-block: 1em;
+  overflow-x: hidden;
+}
+
+main {
+  flex: auto;
+}
+
+.aside-main-separator {
+  width: 1px;
+  height: 100%;
+  border: none;
+  background-color: #fff4;
+  cursor: ew-resize;
+}
