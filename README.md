@@ -34,18 +34,18 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
+        <li><a href="#platform-support">Platform Support</a></li>
       </ul>
     </li>
     <li>
       <a href="#installation">Installation</a>
     </li>
-    <li><a href="#develop-on-your-own">Develop On Your Own</a></li>
+    <li><a href="#build-on-your-own">Build On Your Own</a></li>
+    <li><a href="#publishing">Publishing</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
-
-<!-- ABOUT THE PROJECT -->
 
 ## About The Project
 
@@ -64,6 +64,16 @@ Videotron is a simple video player built with Electron.js. It has a clean and si
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+### Platform Support
+
+- :x: Windows
+- :x: MacOS
+- :heavy_check_mark: Linux
+
+By this time, Videotron only supports Linux. Support for other platforms will be added in the future. But if you want to build it on your own, you can follow the steps in the [Build On Your Own](#build-on-your-own) section.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## Installation
 
 1. Download the latest release from the [releases page](https://github.com/fauzan-radji/videotron/releases)
@@ -73,11 +83,9 @@ Videotron is a simple video player built with Electron.js. It has a clean and si
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- USAGE EXAMPLES -->
+## Build On Your Own
 
-## Develop On Your Own
-
-To develop the project on your own, follow these steps:
+To build the application on your own, follow these steps:
 
 1. Clone the repo
 
@@ -95,15 +103,37 @@ To develop the project on your own, follow these steps:
     npm install
    ```
 
-3. Run the project
+3. Build the project
 
    ```sh
-   npm start
+   npm run make
    ```
+
+4. The executable file will be in the `out/make/` folder.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- CONTRIBUTING -->
+## Publishing
+
+1. To publish the application you need to [generate a GitHub token][generate-github-token] and give it the `public_repo` scope.
+
+2. Copy the `.env.example` file to `.env` and fill in the `GITHUB_TOKEN` field with the token you just generated.
+
+   ```sh
+   cp .env.example .env
+   ```
+
+3. Run the following command to publish the application.
+
+   ```sh
+   npm run publish
+   ```
+
+   This will create a draft release on GitHub.
+
+4. To release the application to the public, you can go to the releases page on GitHub and edit the draft release. Change the draft to a release and publish it. The release will be available for download on the releases page.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Contributing
 
@@ -119,8 +149,6 @@ Don't forget to give the project a star! Thanks again!
 5. Open a Pull Request
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- CONTACT -->
 
 ## Contact
 
@@ -141,6 +169,7 @@ Project Link: [https://github.com/fauzan-radji/videotron](https://github.com/fau
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/tri-putra-fauzan-h-radji-404810257/
 [product-screenshot]: images/screenshot.png
+[generate-github-token]: https://github.com/settings/tokens/new
 [css]: https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white
 [html]: https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white
 [javascript]: https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black
