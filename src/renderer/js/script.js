@@ -6,6 +6,8 @@ openFolderButton.addEventListener("click", async () => {
   const result = await api.openFolder();
   if (result.canceled) return;
   const dirents = await api.readDir(result.filePaths[0]);
+  if (dirents.length === 0) return;
+  sidebarListContainer.innerHTML = "";
   generateSidebarItems(dirents);
 });
 
@@ -22,6 +24,16 @@ async function generateSidebarItems(
 
     listContainer.appendChild(entry);
   }
+
+  const firstFile = dirents.find((dirent) => !dirent.isDirectory);
+  if (firstFile) {
+    videoElement.src = firstFile.path;
+    document.title = firstFile.name;
+
+    const active = document.querySelector(".active");
+    if (active) active.classList.remove("active");
+    listContainer.firstElementChild.classList.add("active");
+  }
 }
 
 function generateFile(name, path) {
@@ -30,6 +42,10 @@ function generateFile(name, path) {
   a.textContent = name;
   a.addEventListener("click", () => {
     videoElement.src = path;
+    document.title = name;
+    const active = document.querySelector(".active");
+    if (active) active.classList.remove("active");
+    li.classList.add("active");
   });
   li.appendChild(a);
   li.title = name;

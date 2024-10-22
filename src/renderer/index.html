@@ -13,8 +13,11 @@
     <title>VideoTron</title>
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/layout.css" />
+    <link rel="stylesheet" href="./css/sidebar.css" />
+    <link rel="stylesheet" href="./css/player.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <script src="./js/icon.js" defer></script>
+    <script src="./js/player.js" defer></script>
     <script src="./js/script.js" defer></script>
   </head>
   <body>
@@ -25,8 +28,44 @@
       <ul id="sidebar-list-container"></ul>
     </aside>
     <hr class="aside-main-separator" />
-    <main>
-      <video id="video" controls></video>
+    <main id="player">
+      <video id="video"></video>
+      <div class="controls disabled" id="controls">
+        <div class="wrapper">
+          <div class="progress">
+            <span id="current">00:00:00</span>
+            <progress min="0" max="100" value="0" id="progress"></progress>
+            <span id="duration">00:00:00</span>
+          </div>
+          <div class="buttons">
+            <div class="left">
+              <button>
+                <i data-icon="prev"></i>
+              </button>
+              <button class="seek" data-duration="-5">
+                <i data-icon="backward"></i>
+              </button>
+              <button id="play">
+                <i data-icon="play"></i>
+              </button>
+              <button class="seek" data-duration="10">
+                <i data-icon="forward"></i>
+              </button>
+              <button>
+                <i data-icon="next"></i>
+              </button>
+            </div>
+            <div class="right">
+              <button id="volume">
+                <i data-icon="speaker"></i>
+              </button>
+              <button id="fullscreen">
+                <i data-icon="enter-fullscreen"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
   </body>
 </html>

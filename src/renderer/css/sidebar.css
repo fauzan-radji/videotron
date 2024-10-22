@@ -1,0 +1,50 @@
+aside button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: #ddd;
+  color: #222;
+  padding: 0.25em 0.5em;
+  border-radius: 0.25em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-inline-start: auto;
+  margin-inline-end: 1rem;
+}
+
+aside button:hover {
+  background-color: #fff;
+}
+
+aside ul {
+  list-style: none;
+  margin-top: 0.5rem;
+}
+
+aside li {
+  cursor: pointer;
+}
+
+aside li a {
+  display: block;
+  width: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+aside li a,
+aside li summary {
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
+  padding-left: calc(var(--indent, 0) * 0.5rem + 1rem);
+  padding-right: 1rem;
+}
+
+aside li.active a,
+aside li.active details summary,
+aside li a:hover,
+aside li details summary:hover {
+  background-color: #fff2;
+}

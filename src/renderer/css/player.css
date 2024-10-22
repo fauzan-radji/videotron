@@ -1,0 +1,85 @@
+main {
+  position: relative;
+  user-select: none;
+}
+
+main.hide-cursor {
+  cursor: none;
+}
+
+main video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.controls .wrapper {
+  width: 100%;
+  height: 100%;
+  background-color: #fff2;
+  display: flex;
+  flex-direction: column;
+  padding-inline: 1em;
+  padding-bottom: 0.5em;
+
+  transition: translate 0.3s;
+  translate: 0 0;
+}
+
+.controls.hidden .wrapper {
+  translate: 0 100%;
+}
+
+.controls:hover .wrapper {
+  translate: 0 0;
+}
+
+.controls.disabled .wrapper {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.progress {
+  display: flex;
+  gap: 1em;
+  font-size: 0.8em;
+  padding-inline: 0.5em;
+}
+
+.progress progress {
+  flex: auto;
+  cursor: pointer;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons .left,
+.buttons .right {
+  display: flex;
+}
+
+.buttons button {
+  border: none;
+  background-color: transparent;
+  aspect-ratio: 1/1;
+  height: 100%;
+  padding-inline: 0.5em;
+  color: inherit;
+  cursor: pointer;
+  border-radius: 0.2em;
+  display: block;
+}
+
+.buttons button:hover {
+  background-color: #fff2;
+}
